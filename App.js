@@ -9,6 +9,8 @@ import {
 } from 'react-native';
 import { createStackNavigator, createSwitchNavigator, createAppContainer } from 'react-navigation';
 
+import createBottomTabNavigator from './navigation/MainTabNavigator';
+
 class SignInScreen extends React.Component {
   static navigationOptions = {
     title: 'Inicio de sesión',
@@ -36,41 +38,17 @@ class HomeScreen extends React.Component {
   render() {
     return (
       <View style={styles.container}>
-        <Button title="Muestrame más de la aplicación" onPress={this._showMoreApp} />
         <Button title="Salir :)" onPress={this._signOutAsync} />
       </View>
     );
   }
 
-  _showMoreApp = () => {
-    this.props.navigation.navigate('Other');
-  };
-
   _signOutAsync = async () => {
     await AsyncStorage.clear();
     this.props.navigation.navigate('Auth');
   };
 }
 
-class OtherScreen extends React.Component {
-  static navigationOptions = {
-    title: 'Muchas características aquí',
-  };
-
-  render() {
-    return (
-      <View style={styles.container}>
-        <Button title="Listo, salir" onPress={this._signOutAsync} />
-        <StatusBar barStyle="default" />
-      </View>
-    );
-  }
-
-  _signOutAsync = async () => {
-    await AsyncStorage.clear();
-    this.props.navigation.navigate('Auth');
-  };
-}
 
 class AuthLoadingScreen extends React.Component {
   constructor() {
@@ -106,13 +84,27 @@ const styles = StyleSheet.create({
   },
 });
 
-const AppStack = createStackNavigator({ Home: HomeScreen, Other: OtherScreen });
+// pantalla de tabs de navegacion
+
+const RootStack = createStackNavigator(
+  {
+    // Login: LoginScreen,
+    Home: createBottomTabNavigator 
+  },
+  {
+    // initialRouteName: 'Login',
+    defaultNavigationOptions: {
+        header: null,
+    }
+  }
+);
+
 const AuthStack = createStackNavigator({ SignIn: SignInScreen });
 
 export default createAppContainer(createSwitchNavigator(
   {
     AuthLoading: AuthLoadingScreen,
-    App: AppStack,
+    App: RootStack,
     Auth: AuthStack,
   },
   {
