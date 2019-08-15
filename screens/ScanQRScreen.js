@@ -53,7 +53,7 @@ export default class BarcodeScannerExample extends React.Component {
     this.setState({ scanned: true });
     let datos = [{id:1, codigo: '2015119063'},{id:2, codigo:'2015119064'}];
     
-    const nuevasAsistencias = [...this.state.asistencias,  data];
+    const nuevasAsistencias = [...this.state.asistencias, data];
     this.setState({
       asistencias: nuevasAsistencias,
     });
