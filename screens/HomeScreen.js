@@ -13,7 +13,7 @@ class HomeScreen extends Component {
     return (
       <View>
         <Text>
-           HOLA DESDE HOME 
+           HOLA DESDE HOME EDITADO tres
         </Text>
       </View>
     );

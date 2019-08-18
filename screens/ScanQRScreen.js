@@ -1,5 +1,5 @@
 import * as React from 'react';
-import { Text, View, StyleSheet, Button } from 'react-native';
+import { Text, View, StyleSheet, Button, AsyncStorage } from 'react-native';
 import Constants from 'expo-constants';
 import * as Permissions from 'expo-permissions';
 
@@ -49,11 +49,21 @@ export default class BarcodeScannerExample extends React.Component {
     );
   }
 
+  guardarEnTelefono = (asistencias) => {
+    AsyncStorage.setItem('@AppAP:asistencia', JSON.stringify(asistencias))
+    .then((valor) => {
+      console.log(valor);
+    })
+    .catch((error) => {
+      console.log(error);
+    })
+  }
+
   handleBarCodeScanned = ({ type, data }) => {
     this.setState({ scanned: true });
-    let datos = [{id:1, codigo: '2015119063'},{id:2, codigo:'2015119064'}];
     
     const nuevasAsistencias = [...this.state.asistencias, data];
+    this.guardarEnTelefono(nuevasAsistencias);
     this.setState({
       asistencias: nuevasAsistencias,
     });

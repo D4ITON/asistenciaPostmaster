@@ -7,9 +7,22 @@ import {
   View,
   Text,
   Button,
+  AsyncStorage,
 } from 'react-native';
 
 class AsistenciaScreen extends Component {
+  constructor(props) {
+    super(props);
+  
+    this.state = {
+      asistencias: [],
+    };
+  }
+
+  componentDidMount() {
+    this.recuperarEnTelefono();
+  }
+
   render() {
     return (
       <View>
@@ -21,6 +34,26 @@ class AsistenciaScreen extends Component {
       </View>
     );
   };
+
+  recuperarEnTelefono = () => {
+    AsyncStorage.getItem('@AppAP:asistencia')
+    .then((valor) => {
+      console.log(valor);
+      console.log(JSON.parse(valor));
+      if(valor !== null){
+        const nuevasAsistencias = JSON.parse(valor);
+        this.setState({
+          asistencias: nuevasAsistencias,
+        });
+      }
+    })
+    .catch((error) => {
+      console.log(error);
+      this.setState({
+        cargando: false,
+      });
+    })
+  }
 
   _logout = () =>{
     this.props.navigation.navigate('Auth');
