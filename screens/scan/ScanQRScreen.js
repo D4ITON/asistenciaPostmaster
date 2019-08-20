@@ -1,11 +1,21 @@
 import * as React from 'react';
-import { Text, View, StyleSheet, Button, AsyncStorage } from 'react-native';
+import { 
+  Text, 
+  View, 
+  StyleSheet, 
+  Button, 
+  Dimensions,
+  AsyncStorage,
+} from 'react-native';
 import Constants from 'expo-constants';
 import * as Permissions from 'expo-permissions';
-
 import { BarCodeScanner } from 'expo-barcode-scanner';
 
-export default class BarcodeScannerExample extends React.Component {
+const { width } = Dimensions.get('window')
+const qrSize = width * 0.7
+
+
+class BarcodeScannerExample extends React.Component {
   state = {
     hasCameraPermission: null,
     scanned: false,
@@ -31,16 +41,16 @@ export default class BarcodeScannerExample extends React.Component {
       return <Text>No se tiene acceso a la cámara</Text>;
     }
     return (
-      <View
-        style={{
-          flex: 1,
-          flexDirection: 'column',
-          justifyContent: 'flex-end',
-        }}>
+      <View style={styles.container}>
         <BarCodeScanner
+          style={StyleSheet.absoluteFill}
           onBarCodeScanned={scanned ? undefined : this.handleBarCodeScanned}
-          style={StyleSheet.absoluteFillObject}
         />
+        <Text
+          onPress={() => this.props.navigation.pop()}
+          style={styles.cancel}>
+          Cancelar
+        </Text>
 
         {scanned && (
           <Button title={'Escanear nuevo'} onPress={() => this.setState({ scanned: false })} />
@@ -74,3 +84,19 @@ export default class BarcodeScannerExample extends React.Component {
   };
 
 }
+
+const styles = StyleSheet.create({
+  container: {
+    flex: 1,
+    flexDirection: 'column',
+    justifyContent: 'flex-end',
+    paddingBottom: 30,
+  },
+  cancel: {
+    fontSize: width * 0.05,
+    textAlign: 'center',
+    color: 'white',
+  },
+});
+
+export default BarcodeScannerExample;
