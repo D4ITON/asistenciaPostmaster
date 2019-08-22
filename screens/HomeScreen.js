@@ -14,11 +14,20 @@ class HomeScreen extends Component {
     return (
       <View style={styles.container}>
         <View>
-          <Text style={styles.numbers}>123</Text>
+          <Text style={styles.numbers}>50</Text>
           <Text style={styles.textCenter}>Asistentes</Text>
         </View>
-        <Text style={styles.textCenter}>123/135</Text>
-        <Text style={styles.textCenter}>98%</Text>
+        <View style={styles.subcontainer}>
+          <View>
+            <Text style={styles.textCenter}>100</Text>
+            <Text style={styles.textCenterDos}>inscritos</Text>
+          </View>
+          <View>
+            <Text style={styles.textCenter}>200</Text>
+            <Text style={styles.textCenterDos}>estudiantes</Text>
+          </View>
+        </View>
+        <Text style={styles.textPorcentaje}>98%</Text>
       </View>
     );
   }
@@ -32,11 +41,26 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     justifyContent: 'space-between',
   },
+  subcontainer: {
+    flex: 1,
+    width: '100%',
+    alignItems: 'center',
+    flexDirection: 'row',
+    justifyContent: 'space-around' ,
+  },
   textCenter: {
     textAlign: 'center',
     fontSize: 20,
   },
+  textCenterDos: {
+    textAlign: 'center',
+    fontSize: 16,
+  },
+  textPorcentaje: {
+    fontSize: 25,
+  },
   numbers: {
+    textAlign: 'center',
     fontSize: 60,
   },
 });
