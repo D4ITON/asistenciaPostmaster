@@ -46,37 +46,28 @@ class TomaAsistencia extends Component {
     );
   }
 
-  agregarRegistro = () => {
-  	
-  	alert(this.state.codigo);
-  };
 
-  // login function
-  login = () => {
-  	// Post data to our express point
-  	// -- It must fetch data via clients IP; 'localhost' will never work.
-  	fetch('https://asistenc1a.herokuapp.com/login', {
+  // agregar registro function
+  agregarRegistro = () => {
+
+  	console.log(this.state.codigo);
+
+  	fetch('http://192.168.3.4:3000/api/marcaasistencia', {
   		method: 'POST',
 		  headers:{
 			'Accept': 'application/json',
 			'Content-Type': 'application/json',
 		},
 		body: JSON.stringify({
-			username: this.state.codigo,
+			codigo: parseInt(this.state.codigo),
 		})
   	})
   	.then( (response) => response.json() )
   	.then((res)=>{
-
-  		if(res.success === true){
-  			alert(res.message);
-  		}else{
-  			alert(res.message);
-  		}
-
+  		alert(res.data.marcaasistencia);
+  		console.log(res);
   	}).catch(function(error) {
       console.log('There has been a problem with your fetch operation: ' + error.message);
-      // ADD THIS THROW error
       throw error;
     });
 

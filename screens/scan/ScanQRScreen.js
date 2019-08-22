@@ -72,14 +72,26 @@ class BarcodeScannerExample extends React.Component {
   handleBarCodeScanned = ({ type, data }) => {
     this.setState({ scanned: true });
     
-    const nuevasAsistencias = [...this.state.asistencias, data];
-    this.guardarEnTelefono(nuevasAsistencias);
-    this.setState({
-      asistencias: nuevasAsistencias,
-    });
+    console.log(this.state.codigo);
 
-    console.log(this.state.asistencias);
-    alert(`Código: ${data}`);
+    fetch('http://192.168.3.4:3000/api/marcaasistencia', {
+      method: 'POST',
+      headers:{
+      'Accept': 'application/json',
+      'Content-Type': 'application/json',
+    },
+    body: JSON.stringify({
+      codigo: parseInt(data),
+    })
+    })
+    .then( (response) => response.json() )
+    .then((res)=>{
+      alert(res.data.marcaasistencia);
+      console.log(res);
+    }).catch(function(error) {
+      console.log('There has been a problem with your fetch operation: ' + error.message);
+      throw error;
+    });
 
   };
 
