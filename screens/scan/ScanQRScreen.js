@@ -86,8 +86,12 @@ class BarcodeScannerExample extends React.Component {
     })
     .then( (response) => response.json() )
     .then((res)=>{
-      alert(res.data.marcaasistencia);
       console.log(res);
+      if(res.status === 'success'){
+          alert(res.data.marcaasistencia);
+      }else{
+          alert('Sin conexión con el servidor');
+      }
     }).catch(function(error) {
       console.log('There has been a problem with your fetch operation: ' + error.message);
       throw error;
