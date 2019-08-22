@@ -9,28 +9,100 @@ import {
   Dimensions,
 } from 'react-native';
 
+const urlForReportes = APIDataReportes => `http://192.168.3.4:3000/api/reporteasistencias`
+
 class HomeScreen extends Component {
+  _isMounted = false;
+
+  constructor(props) {
+    super(props);
+  
+    this.state = {
+      requestFailed: false,
+      asistentes: '',
+      inscritos: '',
+      estudiantes: '',
+      porcentaje: '',
+    };
+  }
+
+  componentDidMount() {
+    this._isMounted = true;
+
+    this.fetchResult()
+    setInterval(this.fetchResult, 2000)
+  }
+
+  componentWillUnmount() {
+    this._isMounted = false;
+  }
+
   render() {
     return (
       <View style={styles.container}>
         <View>
-          <Text style={styles.numbers}>50</Text>
+          <Text style={styles.numbers}>{this.state.asistentes}</Text>
           <Text style={styles.textCenter}>Asistentes</Text>
         </View>
         <View style={styles.subcontainer}>
           <View>
-            <Text style={styles.textCenter}>100</Text>
+            <Text style={styles.textCenter}>{this.state.inscritos}</Text>
             <Text style={styles.textCenterDos}>inscritos</Text>
           </View>
           <View>
-            <Text style={styles.textCenter}>200</Text>
+            <Text style={styles.textCenter}>{this.state.estudiantes}</Text>
             <Text style={styles.textCenterDos}>estudiantes</Text>
           </View>
         </View>
-        <Text style={styles.textPorcentaje}>98%</Text>
+        <Text style={styles.textPorcentaje}>{this.state.porcentaje} %</Text>
       </View>
     );
   }
+
+
+  fetchResult = () => {
+    fetch(urlForReportes(this.props.APIDataReportes))
+    .then(response =>{
+        if(!response.ok){
+            throw Error("Network request failed")
+        }
+        return response
+    })
+    .then(res => res.json())
+    .then(res => {
+      if (this._isMounted) {
+
+        console.log(res.data[0].listar_reporteasistencia)
+        console.log(res.data[1].listar_reporteasistencia)
+        console.log(res.data[2].listar_reporteasistencia)
+        
+        var asistentes = res.data[0].listar_reporteasistencia;
+        var inscritos = res.data[1].listar_reporteasistencia;
+        var estudiantes = res.data[2].listar_reporteasistencia;
+        var porcentaje;
+        if (inscritos) {
+          porcentaje = asistentes * 100 / inscritos;
+        }
+        porcentaje = 0;
+
+        this.setState({
+            asistentes: asistentes,
+            inscritos: inscritos,
+            estudiantes: estudiantes,
+            porcentaje: porcentaje,
+        });
+
+        console.log(this.state.porcentaje);
+        
+      }
+    },() => {
+        this.setState({
+            requestFailed: true
+        })
+    })
+  }
+
+
 }
 
 const styles = StyleSheet.create({
@@ -57,6 +129,7 @@ const styles = StyleSheet.create({
     fontSize: 16,
   },
   textPorcentaje: {
+    textAlign: 'center',
     fontSize: 25,
   },
   numbers: {
