@@ -30,7 +30,24 @@ class HomeScreen extends Component {
   }
 
   borrarDatos = () => {
-  	alert('borrar datos');
+    // funcion para borrar datos
+    // necesita comprobacion
+    fetch('http://192.168.3.4:3000/api/asistencias', {
+        method: 'DELETE',
+        headers:{
+        'Accept': 'application/json',
+        'Content-Type': 'application/json',
+      }
+    })
+    .then((response) => response.json())
+    .then((res) => {
+      console.log(res.message);
+      alert('Asistencias borradas');
+    }).catch(function(error) {
+      console.log('There has been a problem with your fetch operation: ' + error.message);
+      throw error;
+    });
+  	
   };
 }
 
