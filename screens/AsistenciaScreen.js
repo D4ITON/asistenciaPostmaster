@@ -11,7 +11,7 @@ import {
 } from 'react-native';
 import { ListItem } from 'react-native-elements';
 
-const urlForUsers = APIDataUsers => `https://asistenc1a.herokuapp.com/api/users`
+const urlForUsers = APIDataUsers => `http://192.168.3.4:3000/api/obtieneasistentes`
 
 class AsistenciaScreen extends Component {
   _isMounted = false;
@@ -50,7 +50,8 @@ class AsistenciaScreen extends Component {
               leftElement = {this.renderLeftElement(index)}
               style = {{marginLeft : 15}, {marginRight : 5}}
               title={`${ item.apellidos }, ${ item.nombres }`}
-              subtitle={item.codigo}
+              subtitle={item.codigo.toString()}
+              badge={{ value: item.hora, textStyle: { color: 'white' }, containerStyle: { marginTop: -20 } }}
             />
           )}
           refreshing={this.state.refreshing}
