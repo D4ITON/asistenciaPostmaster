@@ -8,8 +8,9 @@ import {
   Text,
   Dimensions,
 } from 'react-native';
+import OfflineNotice from '../OfflineNotice';
 
-const urlForReportes = APIDataReportes => `http://192.168.3.4:3000/api/reporteasistencias`
+const urlForReportes = APIDataReportes => `https://asistenc1a.herokuapp.com/api/reporteasistencias`
 
 class HomeScreen extends Component {
   _isMounted = false;
@@ -40,6 +41,7 @@ class HomeScreen extends Component {
   render() {
     return (
       <View style={styles.container}>
+        <OfflineNotice />
         <View>
           <Text style={styles.numbers}>{this.state.asistentes}</Text>
           <Text style={styles.textCenter}>Asistentes</Text>
@@ -47,11 +49,11 @@ class HomeScreen extends Component {
         <View style={styles.subcontainer}>
           <View>
             <Text style={styles.textCenter}>{this.state.inscritos}</Text>
-            <Text style={styles.textCenterDos}>inscritos</Text>
+            <Text style={styles.textCenterDos}>Inscritos</Text>
           </View>
           <View>
             <Text style={styles.textCenter}>{this.state.estudiantes}</Text>
-            <Text style={styles.textCenterDos}>estudiantes</Text>
+            <Text style={styles.textCenterDos}>Estudiantes</Text>
           </View>
         </View>
         <Text style={styles.textPorcentaje}>{this.state.porcentaje} %</Text>

@@ -2,6 +2,7 @@ import React from 'react';
 import { Platform } from 'react-native';
 import { createStackNavigator, createBottomTabNavigator } from 'react-navigation';
 import { Ionicons } from '@expo/vector-icons';
+import { AntDesign } from '@expo/vector-icons';
 
 import HomeScreen from '../screens/HomeScreen';
 import AsistenciaScreen from '../screens/AsistenciaScreen';
@@ -13,7 +14,7 @@ const tabNavigator = createBottomTabNavigator({
     navigationOptions:{
       tabBarLabel: 'Inicio',
       tabBarIcon: ({ tintColor }) => (
-        <Ionicons name="md-checkmark-circle" size={32} color="green" />
+        <AntDesign name="home" color={tintColor} size={25} />
       ),
     }
   },
@@ -21,7 +22,7 @@ const tabNavigator = createBottomTabNavigator({
     navigationOptions:{
       tabBarLabel: 'Asistencia',
       tabBarIcon: ({ tintColor }) => (
-        <Ionicons name="md-checkmark-circle" size={32} color="green" />
+        <Ionicons name="ios-list" color={tintColor} size={25} />
       ),
     }
   },
@@ -29,7 +30,7 @@ const tabNavigator = createBottomTabNavigator({
     navigationOptions:{
       tabBarLabel: 'Escanear',
       tabBarIcon: ({ tintColor }) => (
-        <Ionicons name="md-checkmark-circle" size={32} color="green" />
+        <Ionicons name="md-qr-scanner" color={tintColor} size={25} />
       ),
     }
   },
@@ -37,15 +38,20 @@ const tabNavigator = createBottomTabNavigator({
     navigationOptions:{
       tabBarLabel: 'Opciones',
       tabBarIcon: ({ tintColor }) => (
-        <Ionicons name="md-checkmark-circle" size={32} color="green" />
+        <AntDesign name="setting" color={tintColor} size={25} />
       ),
     }
   }
 },
   {
-  navigationOptions: {
-    title: 'PostMaster Asistencia'
-  }
+    navigationOptions: {
+      title: 'PostMaster Asistencia'
+    },
+    tabBarOptions: {
+      activeTintColor: '#1DB954',
+      inactiveTintColor: '#000000',
+      labelStyle: { fontSize: 10, fontWeight: '200' },
+    },
 });
 
 tabNavigator.path = '';

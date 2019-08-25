@@ -74,7 +74,7 @@ class BarcodeScannerExample extends React.Component {
     
     console.log(this.state.codigo);
 
-    fetch('http://192.168.3.4:3000/api/marcaasistencia', {
+    fetch('https://asistenc1a.herokuapp.com/api/marcaasistencia', {
       method: 'POST',
       headers:{
       'Accept': 'application/json',

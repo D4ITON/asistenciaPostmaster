@@ -32,7 +32,7 @@ class HomeScreen extends Component {
   borrarDatos = () => {
     // funcion para borrar datos
     // necesita comprobacion
-    fetch('http://192.168.3.4:3000/api/asistencias', {
+    fetch('https://asistenc1a.herokuapp.com/api/asistencias', {
         method: 'DELETE',
         headers:{
         'Accept': 'application/json',

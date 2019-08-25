@@ -1,0 +1,396 @@
+
+{
+  "header": {
+    "event": "Allocation failed - JavaScript heap out of memory",
+    "trigger": "FatalError",
+    "filename": "report.20190824.214308.25472.0.001.json",
+    "dumpEventTime": "2019-08-24T21:43:08Z",
+    "dumpEventTimeStamp": "1566700988576",
+    "processId": 25472,
+    "cwd": "E:\\15. Practica 2\\ReactAplicacion\\asistenciapostmaster",
+    "commandLine": [
+      "C:\\laragon\\bin\\nodejs\\node-v12\\node.exe",
+      "C:\\Users\\D4ITON\\AppData\\Roaming\\npm\\\\node_modules\\expo-cli\\bin\\expo.js",
+      "start"
+    ],
+    "nodejsVersion": "v12.5.0",
+    "wordSize": 64,
+    "arch": "x64",
+    "platform": "win32",
+    "componentVersions": {
+      "node": "12.5.0",
+      "v8": "7.5.288.22-node.14",
+      "uv": "1.29.1",
+      "zlib": "1.2.11",
+      "brotli": "1.0.7",
+      "ares": "1.15.0",
+      "modules": "72",
+      "nghttp2": "1.38.0",
+      "napi": "4",
+      "llhttp": "1.1.4",
+      "http_parser": "2.8.0",
+      "openssl": "1.1.1c",
+      "cldr": "35.1",
+      "icu": "64.2",
+      "tz": "2019a",
+      "unicode": "12.1"
+    },
+    "release": {
+      "name": "node",
+      "headersUrl": "https://nodejs.org/download/release/v12.5.0/node-v12.5.0-headers.tar.gz",
+      "sourceUrl": "https://nodejs.org/download/release/v12.5.0/node-v12.5.0.tar.gz",
+      "libUrl": "https://nodejs.org/download/release/v12.5.0/win-x64/node.lib"
+    },
+    "osName": "Windows_NT",
+    "osRelease": "10.0.18362",
+    "osVersion": "Windows 10 Enterprise",
+    "osMachine": "x86_64",
+    "cpus": [
+      {
+        "model": "Intel(R) Core(TM) i7-6500U CPU @ 2.50GHz",
+        "speed": 2592,
+        "user": 35218656,
+        "nice": 0,
+        "sys": 24464187,
+        "idle": 154277640,
+        "irq": 3580468
+      },
+      {
+        "model": "Intel(R) Core(TM) i7-6500U CPU @ 2.50GHz",
+        "speed": 2592,
+        "user": 35218656,
+        "nice": 0,
+        "sys": 24464187,
+        "idle": 154277640,
+        "irq": 3580468
+      },
+      {
+        "model": "Intel(R) Core(TM) i7-6500U CPU @ 2.50GHz",
+        "speed": 2592,
+        "user": 35218656,
+        "nice": 0,
+        "sys": 24464187,
+        "idle": 154277640,
+        "irq": 3580468
+      },
+      {
+        "model": "Intel(R) Core(TM) i7-6500U CPU @ 2.50GHz",
+        "speed": 2592,
+        "user": 35218656,
+        "nice": 0,
+        "sys": 24464187,
+        "idle": 154277640,
+        "irq": 3580468
+      }
+    ],
+    "host": "DESKTOP-HHDBCJ0"
+  },
+  "javascriptStack": {
+    "message": "No stack.",
+    "stack": [
+      "Unavailable."
+    ]
+  },
+  "nativeStack": [
+    {
+      "pc": "0x00007ff7bb766e09",
+      "symbol": "std::basic_ostream<char,std::char_traits<char> >::operator<<+10889"
+    },
+    {
+      "pc": "0x00007ff7bb76a704",
+      "symbol": "std::basic_ostream<char,std::char_traits<char> >::operator<<+25476"
+    },
+    {
+      "pc": "0x00007ff7bb769728",
+      "symbol": "std::basic_ostream<char,std::char_traits<char> >::operator<<+21416"
+    },
+    {
+      "pc": "0x00007ff7bb852f5b",
+      "symbol": "v8::base::CPU::has_sse+38011"
+    },
+    {
+      "pc": "0x00007ff7bc037e2e",
+      "symbol": "v8::Isolate::ReportExternalAllocationLimitReached+94"
+    },
+    {
+      "pc": "0x00007ff7bc02017a",
+      "symbol": "v8::SharedArrayBuffer::Externalize+842"
+    },
+    {
+      "pc": "0x00007ff7bbeb197c",
+      "symbol": "v8::internal::Heap::EphemeronKeyWriteBarrierFromCode+1436"
+    },
+    {
+      "pc": "0x00007ff7bbeb989f",
+      "symbol": "v8::internal::Heap::OldGenerationSizeOfObjects+4879"
+    },
+    {
+      "pc": "0x00007ff7bbeafb43",
+      "symbol": "v8::internal::Heap::CollectGarbage+1235"
+    },
+    {
+      "pc": "0x00007ff7bbeae3d4",
+      "symbol": "v8::internal::Heap::AddRetainedMap+2292"
+    },
+    {
+      "pc": "0x00007ff7bbecceb5",
+      "symbol": "v8::internal::Factory::NewFillerObject+53"
+    },
+    {
+      "pc": "0x00007ff7bbc8321d",
+      "symbol": "v8::internal::interpreter::JumpTableTargetOffsets::iterator::operator=+3757"
+    },
+    {
+      "pc": "0x00007ff7bc0e0b1d",
+      "symbol": "v8::internal::SetupIsolateDelegate::SetupHeap+614605"
+    },
+    {
+      "pc": "0x000000ebb5e65246",
+      "symbol": ""
+    }
+  ],
+  "javascriptHeap": {
+    "totalMemory": 2181046272,
+    "totalCommittedMemory": 2181046272,
+    "usedMemory": 2126917160,
+    "availableMemory": 50836648,
+    "memoryLimit": 2197815296,
+    "heapSpaces": {
+      "read_only_space": {
+        "memorySize": 262144,
+        "committedMemory": 262144,
+        "capacity": 261832,
+        "used": 31960,
+        "available": 229872
+      },
+      "new_space": {
+        "memorySize": 33554432,
+        "committedMemory": 33554432,
+        "capacity": 16757248,
+        "used": 803360,
+        "available": 15953888
+      },
+      "old_space": {
+        "memorySize": 2132160512,
+        "committedMemory": 2132160512,
+        "capacity": 2115770656,
+        "used": 2114644040,
+        "available": 1126616
+      },
+      "code_space": {
+        "memorySize": 1736704,
+        "committedMemory": 1736704,
+        "capacity": 1395936,
+        "used": 1395936,
+        "available": 0
+      },
+      "map_space": {
+        "memorySize": 6557696,
+        "committedMemory": 6557696,
+        "capacity": 3387280,
+        "used": 3387280,
+        "available": 0
+      },
+      "large_object_space": {
+        "memorySize": 6152192,
+        "committedMemory": 6152192,
+        "capacity": 6104280,
+        "used": 6104280,
+        "available": 0
+      },
+      "code_large_object_space": {
+        "memorySize": 622592,
+        "committedMemory": 622592,
+        "capacity": 550304,
+        "used": 550304,
+        "available": 0
+      },
+      "new_large_object_space": {
+        "memorySize": 0,
+        "committedMemory": 0,
+        "capacity": 16757248,
+        "used": 0,
+        "available": 16757248
+      }
+    }
+  },
+  "resourceUsage": {
+    "userCpuSeconds": 407.531,
+    "kernelCpuSeconds": 32.843,
+    "cpuConsumptionPercent": 8.93072,
+    "maxRss": 2255933440,
+    "pageFaults": {
+      "IORequired": 1122004,
+      "IONotRequired": 0
+    },
+    "fsActivity": {
+      "reads": 30706,
+      "writes": 21
+    }
+  },
+  "libuv": [
+  ],
+  "environmentVariables": {
+    "=E:": "E:\\15. Practica 2\\ReactAplicacion\\asistenciapostmaster",
+    "ADSK_CLM_WPAD_PROXY_CHECK": "FALSE",
+    "aliases": "C:\\laragon\\bin\\cmder\\config\\user-aliases.cmd",
+    "ALLUSERSPROFILE": "C:\\ProgramData",
+    "ANDROID_HOME": "E:\\Victor\\AndroidSDK",
+    "APPDATA": "C:\\Users\\D4ITON\\AppData\\Roaming",
+    "architecture": "64",
+    "atom": "C:\\Users\\D4ITON\\AppData\\Local\\atom\\atom",
+    "ChocolateyInstall": "C:\\ProgramData\\chocolatey",
+    "ChocolateyLastPathUpdate": "132012619378824532",
+    "CLASSPATH": ".;C:\\Program Files\\Java\\jdk1.8.0_201\\lib;",
+    "CMDER_ROOT": "C:\\laragon\\bin\\cmder",
+    "CommonProgramFiles": "C:\\Program Files\\Common Files",
+    "CommonProgramFiles(x86)": "C:\\Program Files (x86)\\Common Files",
+    "CommonProgramW6432": "C:\\Program Files\\Common Files",
+    "COMPUTERNAME": "DESKTOP-HHDBCJ0",
+    "ComSpec": "C:\\WINDOWS\\system32\\cmd.exe",
+    "C_EM64T_REDIST11": "C:\\Program Files (x86)\\Common Files\\Intel\\Shared Files\\cpp\\",
+    "DOCUMENT_ROOT": "C:\\laragon\\www",
+    "DriverData": "C:\\Windows\\System32\\Drivers\\DriverData",
+    "FPS_BROWSER_APP_PROFILE_STRING": "Internet Explorer",
+    "FPS_BROWSER_USER_PROFILE_STRING": "Default",
+    "FULL_TITLE": "\"E:\\15. Practica 2\\ReactAplicacion\\asistenciapostmaster\"",
+    "GIT_INSTALL_ROOT": "C:\\laragon\\bin\\cmder\\..\\git",
+    "HOME": "C:\\Users\\D4ITON",
+    "HOMEDRIVE": "C:",
+    "HOMEPATH": "\\Users\\D4ITON",
+    "INIT_CWD": "E:\\15. Practica 2\\ReactAplicacion\\asistenciapostmaster",
+    "IntelliJ IDEA Community Edition": "C:\\Program Files\\JetBrains\\IntelliJ IDEA Community Edition 2018.3.5\\bin;",
+    "JAVA_HOME": "C:\\Program Files\\Java\\jdk1.8.0_201",
+    "LARAGON_ROOT": "C:\\laragon\\",
+    "LOCALAPPDATA": "C:\\Users\\D4ITON\\AppData\\Local",
+    "LOGONSERVER": "\\\\DESKTOP-HHDBCJ0",
+    "NODE": "C:\\laragon\\bin\\nodejs\\node-v12\\node.exe",
+    "npm_config_argv": "{\"remain\":[],\"cooked\":[\"run\",\"start\"],\"original\":[\"start\"]}",
+    "npm_config_bin_links": "true",
+    "npm_config_ignore_optional": "",
+    "npm_config_ignore_scripts": "",
+    "npm_config_init_license": "MIT",
+    "npm_config_init_version": "1.0.0",
+    "npm_config_registry": "https://registry.yarnpkg.com",
+    "npm_config_save_prefix": "^",
+    "npm_config_strict_ssl": "true",
+    "npm_config_user_agent": "yarn/1.16.0 npm/? node/v12.5.0 win32 x64",
+    "npm_config_version_commit_hooks": "true",
+    "npm_config_version_git_message": "v%s",
+    "npm_config_version_git_sign": "",
+    "npm_config_version_git_tag": "true",
+    "npm_config_version_tag_prefix": "v",
+    "npm_execpath": "C:\\Users\\D4ITON\\AppData\\Roaming\\npm\\node_modules\\yarn\\bin\\yarn.js",
+    "npm_lifecycle_event": "start",
+    "npm_lifecycle_script": "expo start",
+    "npm_node_execpath": "C:\\laragon\\bin\\nodejs\\node-v12\\node.exe",
+    "npm_package_dependencies_expo": "^34.0.1",
+    "npm_package_dependencies_expo_barcode_scanner": "^6.0.0",
+    "npm_package_dependencies_expo_permissions": "~6.0.0",
+    "npm_package_dependencies_react": "16.8.3",
+    "npm_package_dependencies_react_dom": "^16.8.6",
+    "npm_package_dependencies_react_native": "https://github.com/expo/react-native/archive/sdk-34.0.0.tar.gz",
+    "npm_package_dependencies_react_native_elements": "^1.1.0",
+    "npm_package_dependencies_react_native_gesture_handler": "~1.3.0",
+    "npm_package_dependencies_react_native_reanimated": "~1.1.0",
+    "npm_package_dependencies_react_native_web": "^0.11.4",
+    "npm_package_dependencies_react_navigation": "^3.11.1",
+    "npm_package_devDependencies_babel_preset_expo": "^6.0.0",
+    "npm_package_main": "node_modules/expo/AppEntry.js",
+    "npm_package_name": "",
+    "npm_package_private": "true",
+    "npm_package_scripts_android": "expo start --android",
+    "npm_package_scripts_eject": "expo eject",
+    "npm_package_scripts_ios": "expo start --ios",
+    "npm_package_scripts_start": "expo start",
+    "npm_package_scripts_web": "expo start --web",
+    "npm_package_version": "",
+    "NUMBER_OF_PROCESSORS": "4",
+    "OneDrive": "C:\\Users\\D4ITON\\OneDrive",
+    "OPENSSL_CONF": "C:\\laragon\\bin\\apache\\httpd-2.4.35-win64-VC15\\conf\\openssl.cnf",
+    "OS": "Windows_NT",
+    "Path": "C:\\Users\\D4ITON\\AppData\\Local\\Temp\\yarn--1566696053470-0.6429790119064511;E:\\15. Practica 2\\ReactAplicacion\\asistenciapostmaster\\node_modules\\.bin;C:\\Users\\D4ITON\\AppData\\Local\\Yarn\\Data\\link\\node_modules\\.bin;C:\\laragon\\bin\\nodejs\\libexec\\lib\\node_modules\\npm\\bin\\node-gyp-bin;C:\\laragon\\bin\\nodejs\\lib\\node_modules\\npm\\bin\\node-gyp-bin;C:\\laragon\\bin\\nodejs\\node-v12\\node_modules\\npm\\bin\\node-gyp-bin;C:\\Users\\D4ITON\\AppData\\Local\\Yarn\\config\\global\\node_modules\\.bin;C:\\Users\\D4ITON\\AppData\\Roaming\\npm;C:\\Users\\D4ITON\\AppData\\Roaming\\Composer\\vendor\\bin;;C:\\laragon\\bin\\laragon\\utils;C:\\laragon\\bin\\mysql\\mysql-5.7.24-winx64\\bin;C:\\laragon\\bin\\php\\php-7.2.19-Win32-VC15-x64;C:\\laragon\\bin\\composer;C:\\laragon\\bin\\apache\\httpd-2.4.35-win64-VC15\\bin;C:\\laragon\\bin\\redis\\redis-x64-3.2.100;C:\\laragon\\bin\\nodejs\\node-v12;C:\\laragon\\bin\\nginx\\nginx-1.16.0;C:\\laragon\\bin\\notepad++;C:\\laragon\\bin\\telnet;C:\\laragon\\bin\\ngrok;C:\\laragon\\bin\\git\\bin;C:\\laragon\\bin\\git\\cmd;C:\\laragon\\bin\\git\\usr\\bin;C:\\laragon\\bin\\git\\mingw64\\bin;C:\\laragon\\bin;C:\\laragon\\usr\\bin;C:\\laragon\\bin\\putty;C:\\laragon\\bin\\cmder\\bin;C:\\Python27\\;C:\\Python27\\Scripts;C:\\Program Files (x86)\\Common Files\\Intel\\Shared Files\\cpp\\bin\\Intel64;C:\\Program Files (x86)\\Common Files\\Oracle\\Java\\javapath;C:\\Windows\\system32;C:\\Windows;C:\\Windows\\System32\\Wbem;C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\;C:\\Program Files\\Git\\cmd;C:\\Program Files\\nodejs\\;C:\\Program Files\\Sublime Text 3;C:\\Program Files\\PuTTY\\;C:\\Users\\D4ITON\\AppData\\Roaming\\npm;C:\\Users\\D4ITON\\AppData\\Local\\Yarn\\bin;C:\\adb;C:\\WINDOWS\\system32;C:\\WINDOWS;C:\\WINDOWS\\System32\\Wbem;C:\\WINDOWS\\System32\\WindowsPowerShell\\v1.0\\;C:\\WINDOWS\\System32\\OpenSSH\\;C:\\Program Files (x86)\\IVI Foundation\\VISA\\WinNT\\Bin;C:\\Program Files\\Java\\jdk1.8.0_201\\bin;C:\\ProgramData\\chocolatey\\bin;E:\\1. Programas\\sqlservercompartidax86\\100\\Tools\\Binn\\;E:\\1. Programas\\sqlservercompartida\\100\\Tools\\Binn\\;E:\\1. Programas\\sqlservercompartida\\100\\DTS\\Binn\\;E:\\1. Programas\\sqlservercompartidax86\\100\\Tools\\Binn\\VSShell\\Common7\\IDE\\;E:\\1. Programas\\sqlservercompartidax86\\100\\DTS\\Binn\\;C:\\Program Files (x86)\\Yarn\\bin\\;C:\\Program Files\\MATLAB\\R2014a\\bin;C:\\Users\\D4ITON\\AppData\\Roaming\\npm;C:\\Program Files\\Sublime Text 3;C:\\Program Files\\heroku\\bin;C:\\Users\\D4ITON\\AppData\\Local\\Microsoft\\WindowsApps;C:\\Program Files\\JetBrains\\IntelliJ IDEA Community Edition 2018.3.5\\bin;E:\\Victor\\AndroidSDK\\platform-tools;C:\\Users\\D4ITON\\AppData\\Local\\Yarn\\bin;%USERPROFILE%\\AppData\\Local\\Microsoft\\WindowsApps;;C:\\Program Files\\Git\\usr\\bin;C:\\Program Files\\Git\\usr\\share\\vim\\vim74;C:\\laragon\\bin\\cmder\\;",
+    "PATHEXT": ".COM;.EXE;.BAT;.CMD;.VBS;.VBE;.JSE;.WSF;.WSH;.MSC",
+    "PLINK_PROTOCOL": "ssh",
+    "PROCESSOR_ARCHITECTURE": "AMD64",
+    "PROCESSOR_IDENTIFIER": "Intel64 Family 6 Model 78 Stepping 3, GenuineIntel",
+    "PROCESSOR_LEVEL": "6",
+    "PROCESSOR_REVISION": "4e03",
+    "ProgramData": "C:\\ProgramData",
+    "ProgramFiles": "C:\\Program Files",
+    "ProgramFiles(x86)": "C:\\Program Files (x86)",
+    "ProgramW6432": "C:\\Program Files",
+    "PROMPT": "C\bL\bI\bN\bK\b \b$P$G",
+    "PSModulePath": "C:\\WINDOWS\\system32\\WindowsPowerShell\\v1.0\\Modules\\",
+    "PUBLIC": "C:\\Users\\Public",
+    "SESSIONNAME": "Console",
+    "subl": "C:\\Program Files\\Sublime Text 3",
+    "SVN_SSH": "C:\\\\Program Files\\\\Git\\\\bin\\\\ssh.exe",
+    "SystemDrive": "C:",
+    "SystemRoot": "C:\\WINDOWS",
+    "TEMP": "C:\\Users\\D4ITON\\AppData\\Local\\Temp",
+    "TERM": "cygwin",
+    "TER_TITLE": "asistenciapostmaster",
+    "TMP": "C:\\Users\\D4ITON\\AppData\\Local\\Temp",
+    "user-aliases": "C:\\laragon\\bin\\cmder\\config\\user-aliases.cmd",
+    "USERDOMAIN": "DESKTOP-HHDBCJ0",
+    "USERDOMAIN_ROAMINGPROFILE": "DESKTOP-HHDBCJ0",
+    "USERNAME": "D4ITON",
+    "USERPROFILE": "C:\\Users\\D4ITON",
+    "USER_DIR": "C:\\laragon\\usr",
+    "USR_DIR": "C:\\laragon\\usr",
+    "VBOX_MSI_INSTALL_PATH": "C:\\Program Files\\Oracle\\VirtualBox\\",
+    "verbose-output": "0 ",
+    "VXIPNPPATH": "C:\\Program Files (x86)\\IVI Foundation\\VISA\\",
+    "windir": "C:\\WINDOWS",
+    "YARN_WRAP_OUTPUT": "false"
+  },
+  "sharedObjects": [
+    "C:\\laragon\\bin\\nodejs\\node-v12\\node.exe",
+    "C:\\WINDOWS\\SYSTEM32\\ntdll.dll",
+    "C:\\WINDOWS\\System32\\KERNEL32.DLL",
+    "C:\\WINDOWS\\System32\\KERNELBASE.dll",
+    "C:\\WINDOWS\\System32\\WS2_32.dll",
+    "C:\\WINDOWS\\System32\\RPCRT4.dll",
+    "C:\\WINDOWS\\SYSTEM32\\dbghelp.dll",
+    "C:\\WINDOWS\\System32\\ADVAPI32.dll",
+    "C:\\WINDOWS\\System32\\ucrtbase.dll",
+    "C:\\WINDOWS\\System32\\msvcrt.dll",
+    "C:\\WINDOWS\\System32\\sechost.dll",
+    "C:\\WINDOWS\\System32\\USER32.dll",
+    "C:\\WINDOWS\\System32\\win32u.dll",
+    "C:\\WINDOWS\\System32\\GDI32.dll",
+    "C:\\WINDOWS\\System32\\gdi32full.dll",
+    "C:\\WINDOWS\\System32\\msvcp_win.dll",
+    "C:\\WINDOWS\\System32\\PSAPI.DLL",
+    "C:\\WINDOWS\\System32\\CRYPT32.dll",
+    "C:\\WINDOWS\\System32\\MSASN1.dll",
+    "C:\\WINDOWS\\System32\\bcrypt.dll",
+    "C:\\WINDOWS\\SYSTEM32\\IPHLPAPI.DLL",
+    "C:\\WINDOWS\\SYSTEM32\\USERENV.dll",
+    "C:\\WINDOWS\\SYSTEM32\\WINMM.dll",
+    "C:\\WINDOWS\\System32\\profapi.dll",
+    "C:\\WINDOWS\\SYSTEM32\\WINMMBASE.dll",
+    "C:\\WINDOWS\\System32\\cfgmgr32.dll",
+    "C:\\WINDOWS\\System32\\bcryptPrimitives.dll",
+    "C:\\WINDOWS\\System32\\IMM32.DLL",
+    "C:\\WINDOWS\\System32\\powrprof.dll",
+    "C:\\WINDOWS\\System32\\UMPDC.dll",
+    "C:\\WINDOWS\\system32\\uxtheme.dll",
+    "C:\\WINDOWS\\System32\\combase.dll",
+    "C:\\WINDOWS\\system32\\mswsock.dll",
+    "C:\\WINDOWS\\System32\\kernel.appcore.dll",
+    "C:\\WINDOWS\\system32\\napinsp.dll",
+    "C:\\WINDOWS\\system32\\pnrpnsp.dll",
+    "C:\\WINDOWS\\SYSTEM32\\DNSAPI.dll",
+    "C:\\WINDOWS\\System32\\NSI.dll",
+    "C:\\WINDOWS\\System32\\winrnr.dll",
+    "C:\\WINDOWS\\system32\\NLAapi.dll",
+    "C:\\WINDOWS\\system32\\wshbth.dll",
+    "C:\\WINDOWS\\SYSTEM32\\CRYPTBASE.DLL",
+    "C:\\WINDOWS\\SYSTEM32\\dhcpcsvc6.DLL",
+    "C:\\WINDOWS\\SYSTEM32\\dhcpcsvc.DLL",
+    "C:\\Windows\\System32\\rasadhlp.dll",
+    "C:\\WINDOWS\\System32\\fwpuclnt.dll"
+  ]
+}

@@ -8,7 +8,12 @@ import {
   Text,
   TextInput,
   Button,
+  Dimensions,
+  TouchableOpacity,
 } from 'react-native';
+import { MaterialIcons } from '@expo/vector-icons';
+
+const {width: WIDTH} = Dimensions.get('window');
 
 class TomaAsistencia extends Component {
 	constructor(props) {
@@ -18,23 +23,42 @@ class TomaAsistencia extends Component {
 	  	codigo: '',
 	  };
 	}
+
+	submitAndClear = () => {
+		this.setState({
+		  codigo: ''
+		})
+	}
+
   render() {
     return (
       <View style={styles.container}>
-      	<View>
+      	<View style={styles.alignCenter}>
 	      	<Text style={styles.textCenter}>
 	      	  Tomar asistencia
 	      	</Text>
-	      	<TextInput
-	          style={styles.inputText}
-	          onChangeText={(codigo) => this.setState({codigo})}
-	          value={this.state.codigo}
-	          keyboardType={'numeric'}
-	        />
-	        <Button
-	          title="agregar"
-	          onPress={this.agregarRegistro}
-	        />
+	      	<View style={styles.inputContainer}>
+		      	<TextInput
+		          style={styles.inputText}
+		          onChangeText={(codigo) => this.setState({codigo})}
+		          value={this.state.codigo}
+		          keyboardType={'numeric'}
+		          maxLength = {15}
+		          clearButtonMode='always'
+		        />
+		        {this.state.codigo !== '' &&
+		      		<TouchableOpacity style={styles.btnClear}
+		            	onPress={this.submitAndClear} >
+		            	<MaterialIcons name="clear" size={25} color="gray"/>
+		          	</TouchableOpacity>
+		        }
+
+	      	</View>
+	      	<TouchableOpacity style={styles.btnAgregar}
+		          onPress={this.agregarRegistro}
+		        >
+		          <Text style={styles.text}>Agregar</Text>
+		    </TouchableOpacity>
       	</View>
         <View>
         	<Button
@@ -51,8 +75,12 @@ class TomaAsistencia extends Component {
   agregarRegistro = () => {
 
   	console.log(this.state.codigo);
+  	if (this.state.codigo === '') {
+  		alert('Ingrese un código');
+  		return false
+  	}
 
-  	fetch('http://192.168.3.4:3000/api/marcaasistencia', {
+  	fetch('https://asistenc1a.herokuapp.com/api/marcaasistencia', {
   		method: 'POST',
 		  headers:{
 			'Accept': 'application/json',
@@ -89,17 +117,46 @@ const styles = StyleSheet.create({
 	    alignItems: 'center',
 	    justifyContent: 'space-between',
 	  },
+	inputContainer: {
+		marginTop: 10
+	},
+	alignCenter: {
+		flex: 1,
+		justifyContent: 'center',
+		alignItems: 'center',
+	},
 	inputText:{
-	    height: 40, 
-	    width: 300,
-	    borderBottomColor: 'gray', 
-	    borderBottomWidth: 1,
-	    margin: 12
+	    height: 50,
+	    fontSize: 25,
+	    width: WIDTH - 55,
+	    borderWidth: 1,
+	    borderColor: 'gray',
+	    margin: 10,
+	    borderRadius: 25,
+	    paddingLeft: 30,
 	 },
 	textCenter: {
 	   textAlign: 'center',
 	   fontSize: 20,
 	},
+	btnClear:{
+	   position: 'absolute',
+	   top: 20,
+	   right: 40
+	},
+	btnAgregar:{
+	   width: WIDTH - 55,
+	   height: 45,
+	   borderRadius: 25,
+	   backgroundColor: 'rgba(29,185,84,0.9)',
+	   justifyContent: 'center',
+	   marginTop: 20,
+	},
+	text: {
+	    color: 'rgba(255,255,255,0.7)',
+	    fontSize: 16,
+	    textAlign: 'center'
+	}
 });
 
 

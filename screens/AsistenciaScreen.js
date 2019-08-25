@@ -10,8 +10,9 @@ import {
   FlatList,
 } from 'react-native';
 import { ListItem } from 'react-native-elements';
+import OfflineNotice from '../OfflineNotice';
 
-const urlForUsers = APIDataUsers => `http://192.168.3.4:3000/api/obtieneasistentes`
+const urlForUsers = APIDataUsers => `https://asistenc1a.herokuapp.com/api/obtieneasistentes`
 
 class AsistenciaScreen extends Component {
   _isMounted = false;
@@ -42,6 +43,7 @@ class AsistenciaScreen extends Component {
 
     return (
       <View>
+        <OfflineNotice />
         <FlatList
           data={this.state.usuarios}
           keyExtractor={(item, index) => index.toString()}
